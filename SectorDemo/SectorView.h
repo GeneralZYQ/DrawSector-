@@ -10,6 +10,8 @@
 
 @interface SectorView : UIView
 
+@property (nonatomic, assign) BOOL showTitles;
+
 - (id)initWithPercents:(NSArray *)percents;
 - (void)reConfigurePercents:(NSArray *)percents;
 

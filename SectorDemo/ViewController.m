@@ -21,18 +21,21 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
-    self.view.backgroundColor = [UIColor greenColor];
+    CGFloat screenWidth = [UIScreen mainScreen].bounds.size.width;
+    
+    self.view.backgroundColor = [UIColor blackColor];
     
     self.setcView = [[SectorView alloc] initWithPercents:@[@(15), @(15), @(60), @(10)]];
-    self.setcView.frame = CGRectMake(0, 50, [UIScreen mainScreen].bounds.size.width, 200);
+    self.setcView.frame = CGRectMake(0, 20, [UIScreen mainScreen].bounds.size.width, 200);
+    self.setcView.showTitles = NO;
     [self.view addSubview:_setcView];
     
-    UIButton *button = [[UIButton alloc] initWithFrame:CGRectMake(10, 300, 80, 44)];
+    UIButton *button = [[UIButton alloc] initWithFrame:CGRectMake((screenWidth - 80) / 2, 265, 80, 44)];
     [button setTitle:@"reDraw" forState:UIControlStateNormal];
     [self.view addSubview:button];
     [button addTarget:self action:@selector(reDrawButtonPressed:) forControlEvents:UIControlEventTouchUpInside];
     
-    self.textField = [[UITextField alloc] initWithFrame:CGRectMake(10, 260, 300, 40)];
+    self.textField = [[UITextField alloc] initWithFrame:CGRectMake(10, 225, screenWidth - 20, 40)];
     self.textField.backgroundColor = [UIColor whiteColor];
     self.textField.placeholder = @"请输入新的系列数值，以空格分隔";
     [self.view addSubview:self.textField];

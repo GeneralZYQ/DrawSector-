@@ -8,6 +8,8 @@
 
 #import "SectorView.h"
 
+#define kScreenWidth [UIScreen mainScreen].bounds.size.width
+
 @interface SectorView ()
 
 @property (nonatomic, retain) NSArray *storeColors;
@@ -26,6 +28,7 @@
     if (self) {
         self.storeColors = @[[UIColor redColor], [UIColor yellowColor], [UIColor blueColor]];
         self.percents = percents;
+        self.backgroundColor = [UIColor whiteColor];
     }
     
     return self;
@@ -81,7 +84,7 @@
         CGFloat startrad = [rads[i] floatValue];
         CGFloat endrad = [rads[i + 1] floatValue];
         
-        CGPoint center = CGPointMake(150,radius * 1.5);
+        CGPoint center = CGPointMake(kScreenWidth / 2,radius * 1.5);
         UIBezierPath *arc = [UIBezierPath bezierPath]; //empty path
         [arc moveToPoint:center];
         CGPoint next;
@@ -96,17 +99,18 @@
         [color set];
         [arc fill];
         
-//        UILabel *titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(20, 40, 40, 20)];
-//        CGPoint labelPoint;
-//        labelPoint.x = center.x + radius * cos((endrad + startrad) / 2);
-//        labelPoint.y = center.y + radius * sin((endrad + startrad) / 2);
-//        titleLabel.transform = CGAffineTransformMakeRotation(M_PI / 2 + ((endrad + startrad) / 2));
-//        titleLabel.center = labelPoint;
-//        titleLabel.text = @"hehe";
-//        titleLabel.backgroundColor = [UIColor whiteColor];
-//    
-//        [self addSubview:titleLabel];
-//        [self.titleLabels addObject:titleLabel];
+        UILabel *titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(20, 40, 50, 20)];
+        CGPoint labelPoint;
+        labelPoint.x = center.x + radius * cos((endrad + startrad) / 2);
+        labelPoint.y = center.y + radius * sin((endrad + startrad) / 2);
+        titleLabel.transform = CGAffineTransformMakeRotation(M_PI / 2 + ((endrad + startrad) / 2));
+        titleLabel.center = labelPoint;
+        titleLabel.text = [NSString stringWithFormat:@"%ld ps", (long)[self.percents[i] integerValue]];
+        titleLabel.backgroundColor = [UIColor clearColor];
+    
+        [self addSubview:titleLabel];
+        [self.titleLabels addObject:titleLabel];
+        titleLabel.hidden = !self.showTitles;
         
     }
     
