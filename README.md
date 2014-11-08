@@ -65,7 +65,7 @@ TODO
 联系方式
 -------------
 
-weibo:http://weibo.com/1881383360/profile?topnav=1&wvr=6
+weibo:http://weibo.com/1881383360/profile?topnav=1&wvr=6<br>
 Email:wazyq.cool@163.com
 
 欢迎大家提出宝贵的建议或意见:)
