@@ -69,3 +69,71 @@ weibo:http://weibo.com/1881383360/profile?topnav=1&wvr=6<br>
 Email:wazyq.cool@163.com
 
 欢迎大家提出宝贵的建议或意见:)
+
+<hr>
+
+English Version
+------------
+
+DrawSector is a simple project that can you class `SectorView` to draw sectors with the provided percents.Each sector will take the rad as the percent is. And you can redraw the sectors as you will at any time.
+
+<img width=150 src="https://raw.githubusercontent.com/GeneralZYQ/DrawSector-/master/SectorDemo/sectorWithPercents.png"/>
+<img width=150 src="https://raw.githubusercontent.com/GeneralZYQ/DrawSector-/master/SectorDemo/sectorWithoutPercents.png"/>
+<img width=150 src="https://raw.githubusercontent.com/GeneralZYQ/DrawSector-/master/SectorDemo/printResults1.gif"/>
+
+How it works
+-------------
+
+In the process of painting, you can input the percents as you want and the cake diagram will draw with the percents.And each sector can display with a tilte to represent the value of the percent to the sector.
+
+There is a sample project。
+
+Example
+------------
+You can see how this project work with the following gif.
+
+<img width=150 src="https://raw.githubusercontent.com/GeneralZYQ/DrawSector-/master/SectorDemo/example.gif"/>
+
+Usage
+---------------
+
+1)put`SectorView` as a subview in the place you want it to be displayed. And set the original percents it should take and the frame.
+
+```objc
+    self.setcView = [[SectorView alloc] initWithPercents:@[@(15), @(15), @(60), @(10)]];
+    self.setcView.frame = CGRectMake(0, 20, [UIScreen mainScreen].bounds.size.width, 200);
+    [self.view addSubview:_setcView];
+```
+
+2)set if `SectorView` should display the titles(in this example YES)
+
+```objc
+self.setcView.showTitles = YES;
+```
+
+3)set property `storeColors` of `SectorView` to dentify the colors of sectors
+
+4)After the steps above. You can see the result
+
+5）yes you can re set the percents of the secotr view. just invoke method`- (void)reConfigurePercents:(NSArray *)percents;`and`- (void)reDraw;` to achieve.
+
+```objc
+    [self.setcView reConfigurePercents:numbers];
+    [self.setcView reDraw];
+```
+
+Requirements
+---
+
+This project uses ARC. If you are not using ARC in your project, add '-fobjc-arc' as a compiler flag for all the files in this project.
+
+TODO
+------------
+I want animation for draw the sectors and set titles for each sector.
+
+Contacts
+----
+weibo:http://weibo.com/1881383360/profile?topnav=1&wvr=6<br>
+Email:wazyq.cool@163.com
+
+Just feel free to contact me:)
