@@ -29,6 +29,7 @@
         self.storeColors = @[[UIColor redColor], [UIColor yellowColor], [UIColor blueColor]];
         self.percents = percents;
         self.backgroundColor = [UIColor whiteColor];
+        self.titleLabels = [NSMutableArray arrayWithCapacity:0];
     }
     
     return self;

@@ -27,7 +27,7 @@
     
     self.setcView = [[SectorView alloc] initWithPercents:@[@(15), @(15), @(60), @(10)]];
     self.setcView.frame = CGRectMake(0, 20, [UIScreen mainScreen].bounds.size.width, 200);
-    self.setcView.showTitles = NO;
+    self.setcView.showTitles = YES;
     [self.view addSubview:_setcView];
     
     UIButton *button = [[UIButton alloc] initWithFrame:CGRectMake((screenWidth - 80) / 2, 265, 80, 44)];
