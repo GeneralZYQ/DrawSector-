@@ -24,6 +24,8 @@ DrawSector 是一个简单的可以按照一定的比例绘制半圆形饼状图
 
 可以通过如下的gif图像获得该工程的使用示例:)
 
+注意:在输入框中输入新的百分比分布时，<b>数字间必须以空格分开</b>，否则不执行。
+
 <img width=150 src="https://raw.githubusercontent.com/GeneralZYQ/DrawSector-/master/SectorDemo/example.gif"/>
 
 使用方法
@@ -91,6 +93,8 @@ There is a sample project。
 Example
 ------------
 You can see how this project work with the following gif.
+
+Attention: When you are inputing the new percents arangement in the textfiled. New velues <b>must</b> be separated by space, or nothing happened.
 
 <img width=150 src="https://raw.githubusercontent.com/GeneralZYQ/DrawSector-/master/SectorDemo/example.gif"/>
 
